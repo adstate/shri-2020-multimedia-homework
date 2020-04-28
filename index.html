@@ -3,45 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <title>Test streams</title>
+
+    <link rel="stylesheet" href="index.css">
+
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script src="initVideo.js"></script>
-    <style>
-        .video {
-            width: 300px;
-            height: 200px;
-        }
-    </style>
+
 </head>
-<body>
+<body class="page">
 
-<video id="video-1" class="video" controls muted autoplay></video>
-<video id="video-2" class="video" controls muted autoplay></video>
-<br>
-<video id="video-3" class="video" controls muted autoplay></video>
-<video id="video-4" class="video" controls muted autoplay></video>
-<script>
-    initVideo(
-        document.getElementById('video-1'),
-        'http://localhost:9191/master?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fsosed%2Fmaster.m3u8'
-    );
+    <div class="video-container">
+        <div class="video-container__item">
+            <div class="video-item">
+                <video id="video-1" class="video" controls muted autoplay playsinline></video>
+                <div class="video-controls">
+                    <button class="video-controls__button video-controls__button_pause"></button>
+                    <div class="video-controls__container">
+                        <div class="volume-num"></div>
+                        <div class="video-controls__volume"></div>
+                        <div class="video-controls__contrast">
+                            <label>Яркость</label>
+                            <input type="range" class="brightness-input" min="0" max="2" step="0.01">
+                        </div>
+                        <div class="video-controls__brightness">
+                            <label>Контраст</label>
+                            <input type="range" class="contrast-input" min="0" max="2" step="0.01">
+                        </div>
+                        <button class="video-controls__all-cameras">
+                            Все камеры
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    initVideo(
-        document.getElementById('video-2'),
-        'http://localhost:9191/live?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fstairs%2Fmaster.m3u8'
-    );
+        <div class="video-container__item">
+            <div class="video-item">
+                <video id="video-2" class="video" controls muted autoplay playsinline></video>
+                <div class="video-controls">
+                    <button class="video-controls__button video-controls__button_pause"></button>
+                    <div class="video-controls__container">
+                        <div class="volume-num"></div>
+                        <div class="video-controls__volume"></div>
+                        <div class="video-controls__contrast">
+                            <label>Яркость</label>
+                            <input type="range" class="brightness-input" min="0" max="2" step="0.01">
+                        </div>
+                        <div class="video-controls__brightness">
+                            <label>Контраст</label>
+                            <input type="range" class="contrast-input" min="0" max="2" step="0.01">
+                        </div>
+                        <button class="video-controls__all-cameras">
+                            Все камеры
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    initVideo(
-        document.getElementById('video-3'),
-        'http://localhost:9191/master?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fdog%2Fmaster.m3u8'
-    );
+        <div class="video-container__item">
+            <div class="video-item">
+                <video id="video-3" class="video" controls muted autoplay playsinline></video>
+                <div class="video-controls">
+                    <button class="video-controls__button video-controls__button_pause"></button>
+                    <div class="video-controls__container">
+                        <div class="volume-num"></div>
+                        <div class="video-controls__volume"></div>
+                        <div class="video-controls__contrast">
+                            <label>Яркость</label>
+                            <input type="range" class="brightness-input" min="0" max="2" step="0.01">
+                        </div>
+                        <div class="video-controls__brightness">
+                            <label>Контраст</label>
+                            <input type="range" class="contrast-input" min="0" max="2" step="0.01">
+                        </div>
+                        <button class="video-controls__all-cameras">
+                            Все камеры
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    initVideo(
-        document.getElementById('video-4'),
-        'http://localhost:9191/live?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fstreet%2Fmaster.m3u8'
-    );
+        <div class="video-container__item">
+            <div class="video-item">
+                <video id="video-4" class="video" controls muted autoplay playsinline></video>
+                <div class="video-controls">
+                    <button class="video-controls__button video-controls__button_pause"></button>
+                    <div class="video-controls__container">
+                        <div class="volume-num"></div>
+                        <div class="video-controls__volume"></div>
+                        <div class="video-controls__contrast">
+                            <label>Яркость</label>
+                            <input type="range" class="brightness-input" min="0" max="2" step="0.01">
+                        </div>
+                        <div class="video-controls__brightness">
+                            <label>Контраст</label>
+                            <input type="range" class="contrast-input" min="0" max="2" step="0.01">
+                        </div>
+                        <button class="video-controls__all-cameras">
+                            Все камеры
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</script>
+    <script>
+        initVideo(
+            document.getElementById('video-1'),
+            'http://localhost:9191/master?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fsosed%2Fmaster.m3u8'
+        );
 
+        initVideo(
+            document.getElementById('video-2'),
+            'http://localhost:9191/live?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fstairs%2Fmaster.m3u8'
+        );
+
+        initVideo(
+            document.getElementById('video-3'),
+            'http://localhost:9191/master?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fdog%2Fmaster.m3u8'
+        );
+
+        initVideo(
+            document.getElementById('video-4'),
+            'http://localhost:9191/live?url=http%3A%2F%2Flocalhost%3A3102%2Fstreams%2Fstreet%2Fmaster.m3u8'
+        );
+
+        const videos = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.video-container__item').forEach(elm => {
+                videos.push(new Video(elm));
+            });
+        });
+    </script>
+
+    <script src="index.js"></script>
 
 </body>
 </html>
