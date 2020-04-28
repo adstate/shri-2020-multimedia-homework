@@ -76,6 +76,7 @@ body {
 .video-item_fullscreen .video-controls__container {
     font-size: 11px;
     display: flex;
+    align-items: center;
 }
 
 .video-item_fullscreen .video-controls {
@@ -97,7 +98,7 @@ body {
 
 .video-controls__container {
     display: none;
-    color: #fff;    
+    color: #fff;
 }
 
 .video-controls__contrast, .video-controls__brightness {

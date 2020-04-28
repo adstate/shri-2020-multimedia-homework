@@ -21,12 +21,13 @@ class Video {
             this.element.style.zIndex = 9;
             this.element.classList.add('video-item_fullscreen');
 
-            this.video.muted = !this.video.muted;
+            this.video.muted = false;
             this.volumeAnalyzer();
         });
 
         this.element.querySelector('.video-controls__all-cameras').addEventListener('click', (e) => {
-            this.video.muted = !this.video.muted;
+            this.video.muted = true;
+
             this.element.classList.remove('video-item_fullscreen');
             setTimeout(() => {
                 this.element.style.zIndex = 1;
@@ -58,7 +59,7 @@ class Video {
         }
     }
 
-    volumeAnalyzer() {  
+    volumeAnalyzer() {
         if (this.audioCtx) return;
         
         this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
